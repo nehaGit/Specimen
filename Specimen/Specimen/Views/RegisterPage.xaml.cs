@@ -15,6 +15,7 @@ namespace Specimen.Views
         public RegisterPage()
         {
             InitializeComponent();
+            this.BindingContext = new RegisterViewModel(this.Navigation);
         }
     }
 }

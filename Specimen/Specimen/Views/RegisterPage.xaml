@@ -7,11 +7,20 @@
             <Image Source="xamarin.png" Aspect="AspectFill" HorizontalOptions="Center"/>
             <StackLayout Padding="10,10,10,10" Spacing="10" HorizontalOptions="FillAndExpand">
                 <Entry Placeholder="Name"  Style="{StaticResource EntryStyle}" />
-                <Entry Placeholder="Mobile" Style="{StaticResource EntryStyle}"/>
-                <Entry Placeholder="Email" Style="{StaticResource EntryStyle}"/>
-                <Entry Placeholder="Password" Style="{StaticResource EntryStyle}"/>
+                <Entry Placeholder="Mobile" Keyboard="Telephone" Style="{StaticResource EntryStyle}"/>
+                <Entry Placeholder="Email" Keyboard="Email"  Style="{StaticResource EntryStyle}"/>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="0">
+                    <Entry Placeholder="Password" IsPassword="{Binding IsPassword}" Style="{StaticResource EntryStyle}"/>
+                    <StackLayout Padding="5,5,5,5" HeightRequest="40" WidthRequest="40" BackgroundColor="{StaticResource NormalTextColor}">
+                        <Image Source="{Binding PasswordImage}"  IsEnabled="True" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding PasswordShowCommand}" NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
-            <Button Text="Register" Style="{StaticResource ButtonStyle}"/>
+            <Button Text="Register" Style="{StaticResource ButtonStyle}" Command="{Binding PasswordShowCommand }"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
