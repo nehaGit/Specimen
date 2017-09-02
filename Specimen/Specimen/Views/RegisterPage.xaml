@@ -9,7 +9,7 @@
             <StackLayout Padding="0,10,0,10" Spacing="10" HorizontalOptions="FillAndExpand">
                 <local:ExtendedEntry Placeholder="Name"  Style="{StaticResource EntryStyle}" />
                 <local:ExtendedEntry Placeholder="Mobile" Keyboard="Telephone" Style="{StaticResource EntryStyle}"/>
-                <local:ExtendedEntry Placeholder="Email" Keyboard="Email"  Style="{StaticResource EntryStyle}"/>
+                <local:ExtendedEntry Placeholder="Email" Keyboard="Email"  Style="{StaticResource EntryStyle}" local:EmailValidationBehaviour.AttachBehavior="true"/>
                 <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="0">
                     <local:ExtendedEntry Placeholder="Password" IsPassword="{Binding IsPassword}" Style="{StaticResource EntryStyle}"/>
                     <StackLayout Padding="5,5,5,5" HeightRequest="30" WidthRequest="30" BackgroundColor="{StaticResource NormalTextColor}">

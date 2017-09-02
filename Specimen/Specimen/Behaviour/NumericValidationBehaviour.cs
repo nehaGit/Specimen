@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Specimen.Behaviour
+namespace Specimen
 {
     public static class NumericValidationBehavior
     {

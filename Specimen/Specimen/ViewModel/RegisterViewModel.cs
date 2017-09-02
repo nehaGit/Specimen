@@ -16,6 +16,7 @@ namespace Specimen
         private bool isPassword = true;
         public bool IsPassword { get { return isPassword; } set { isPassword = value; OnPropertyChanged(); } }
         public string PasswordImage { get { return passwordImage; } set { passwordImage = value; OnPropertyChanged("PasswordImage"); } }
+        public bool IsActiveRegister { get { return IsActiveRegister; } set { IsActiveRegister = value; OnPropertyChanged(); } }
         public ICommand PasswordShowCommand { get; private set; }
         public ICommand RegisterCommand { get; private set; }
 
@@ -24,8 +25,9 @@ namespace Specimen
         public RegisterViewModel(INavigation navigation)
         {
             Navigation = navigation;
+            IsActiveRegister=false;
             PasswordShowCommand = new Command(async () => await RunSafe(ShowHidePassword));
-            RegisterCommand = new Command(Register);
+            RegisterCommand = new Command(Register,()=>IsActiveRegister);
         }
 
      public void ShowHidePassword()
