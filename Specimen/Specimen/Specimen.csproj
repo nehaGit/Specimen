@@ -40,7 +40,8 @@
     </Compile>
     <Compile Include="Behaviour\EmailValidationBehaviour.cs" />
     <Compile Include="Behaviour\NumericValidationBehaviour.cs" />
-    <Compile Include="Common\BaseViewModel.cs" />
+    <Compile Include="Common\ExtendedEntry.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

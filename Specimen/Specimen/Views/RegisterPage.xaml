@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:local="clr-namespace:Specimen;assembly=Specimen" 
              x:Class="Specimen.Views.RegisterPage">
     <ContentPage.Content>
         <StackLayout Padding="20,10,20,10" Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image Source="xamarin.png" Aspect="AspectFill" HorizontalOptions="Center"/>
-            <StackLayout Padding="10,10,10,10" Spacing="10" HorizontalOptions="FillAndExpand">
-                <Entry Placeholder="Name"  Style="{StaticResource EntryStyle}" />
-                <Entry Placeholder="Mobile" Keyboard="Telephone" Style="{StaticResource EntryStyle}"/>
-                <Entry Placeholder="Email" Keyboard="Email"  Style="{StaticResource EntryStyle}"/>
+            <StackLayout Padding="0,10,0,10" Spacing="10" HorizontalOptions="FillAndExpand">
+                <local:ExtendedEntry Placeholder="Name"  Style="{StaticResource EntryStyle}" />
+                <local:ExtendedEntry Placeholder="Mobile" Keyboard="Telephone" Style="{StaticResource EntryStyle}"/>
+                <local:ExtendedEntry Placeholder="Email" Keyboard="Email"  Style="{StaticResource EntryStyle}"/>
                 <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="0">
-                    <Entry Placeholder="Password" IsPassword="{Binding IsPassword}" Style="{StaticResource EntryStyle}"/>
-                    <StackLayout Padding="5,5,5,5" HeightRequest="40" WidthRequest="40" BackgroundColor="{StaticResource NormalTextColor}">
+                    <local:ExtendedEntry Placeholder="Password" IsPassword="{Binding IsPassword}" Style="{StaticResource EntryStyle}"/>
+                    <StackLayout Padding="5,5,5,5" HeightRequest="30" WidthRequest="30" BackgroundColor="{StaticResource NormalTextColor}">
                         <Image Source="{Binding PasswordImage}"  IsEnabled="True" >
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding PasswordShowCommand}" NumberOfTapsRequired="1"/>
